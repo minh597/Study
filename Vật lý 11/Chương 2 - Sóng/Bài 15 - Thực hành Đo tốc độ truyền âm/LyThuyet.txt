@@ -1,0 +1,24 @@
+--- LÝ THUYẾT: BÀI 15 - THỰC HÀNH ĐO TỐC ĐỘ TRUYỀN ÂM ---
+
+1. Mục đích thí nghiệm
+- Đo tốc độ truyền âm trong không khí bằng phương pháp cộng hưởng sóng âm trong ống trụ (ống Kundt hoặc ống cộng hưởng âm thanh).
+
+2. Cơ sở lý thuyết
+- Khi sóng âm truyền vào ống cộng hưởng chứa không khí có một đầu bịt kín (như mặt nước điều chỉnh được độ cao) và một đầu để hở có âm thoa dao động ở miệng ống, sẽ xảy ra hiện tượng sóng dừng.
+- Điều kiện để có cộng hưởng âm (âm thanh phát ra to nhất) trong ống hình trụ một đầu kín, một đầu hở:
+  + l = (2k + 1) * (lambda / 4)
+- Khi dịch chuyển cột nước để tìm hai vị trí cộng hưởng liên tiếp, khoảng cách giữa hai vị trí liên tiếp đó là Delta_l = lambda / 2.
+
+3. Dụng cụ thí nghiệm
+- Ống cộng hưởng thủy tinh có chia vạch, bình chứa nước nối ống bằng ống mềm.
+- Âm thoa có tần số f xác định kèm búa cao su.
+- Thước đo.
+
+4. Quy trình tiến hành
+- Bước 1: Đặt âm thoa dao động ở miệng ống cộng hưởng.
+- Bước 2: Thay đổi chiều dài cột khí l để tìm vị trí âm phát ra to nhất (cộng hưởng).
+- Bước 3: Đo chiều dài l_1, l_2 tại các vị trí cộng hưởng liên tiếp.
+- Bước 4: Tính bước sóng lambda = 2 * (l_2 - l_1) và tốc độ truyền âm v = lambda * f.
+
+5. Kiến thức cần ghi nhớ
+- Khoảng cách giữa hai vị trí cộng hưởng liên tiếp bằng nửa bước sóng (lambda / 2).

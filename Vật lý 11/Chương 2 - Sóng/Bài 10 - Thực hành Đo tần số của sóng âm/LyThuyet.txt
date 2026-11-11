@@ -1,0 +1,23 @@
+--- LÝ THUYẾT: BÀI 10 - THỰC HÀNH ĐO TẦN SỐ CỦA SÓNG ÂM ---
+
+1. Mục đích thí nghiệm
+- Sử dụng dao động kí điện tử (hoặc thiết bị ghi âm, phần mềm âm thanh) để quan sát sóng âm và đo tần số của sóng âm phát ra từ âm thoa hoặc còi phát âm thanh.
+
+2. Cơ sở lý thuyết
+- Sóng âm là sóng dọc truyền trong môi trường khí, lỏng, rắn.
+- Tần số f của sóng âm liên hệ với chu kì T hiển thị trên màn hình dao động kí qua công thức f = 1 / T.
+
+3. Dụng cụ và thiết bị
+- Máy phát tần số, loa hoặc âm thoa nhỏ.
+- Dao động kí điện tử (Oscilloscope) hoặc máy tính/điện thoại có cài phần mềm thu âm và phân tích phổ tần số (như Sound Analyzer).
+- Dây nối tín hiệu.
+
+4. Quy trình tiến hành
+- Bước 1: Kết nối thiết bị phát âm thanh với dao động kí.
+- Bước 2: Điều chỉnh nguồn phát để hiển thị đồ thị hình sin ổn định trên màn hình.
+- Bước 3: Đọc giá trị chu kì T trên màn hình (đếm số ô ngang nhân với độ nhạy thời gian time/div).
+- Bước 4: Tính tần số f và tính sai số phép đo.
+
+5. Kiến thức cần ghi nhớ
+- Cách đọc thông số thời gian trên dao động kí điện tử.
+- Công thức tính tần số từ chu kì sóng âm.

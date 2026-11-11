@@ -1,0 +1,17 @@
+--- LÝ THUYẾT: BÀI 7 - CẤP SỐ NHÂN ---
+
+1. Khái niệm
+- Ví dụ thực tế: Sự phân đôi tế bào của vi khuẩn qua các thế hệ liên tiếp.
+- Định nghĩa: Cấp số nhân là một dãy số (hữu hạn hoặc vô hạn), trong đó kể từ số hạng thứ hai, mỗi số hạng đều là tích của số hạng đứng ngay trước nó với một số không đổi q.
+- Số q được gọi là công bội của cấp số nhân.
+
+2. Bản chất và đặc điểm
+- Công thức truy hồi đặc trưng: u_(n+1) = u_n * q với mọi n thuộc N*.
+- Nếu q = 0, cấp số nhân có dạng u_1, 0, 0, ...; nếu q = 1, cấp số nhân là dãy số không đổi; nếu q = -1, các số hạng đổi dấu liên tục.
+
+3. Tính chất các số hạng
+- Bình phương của mỗi số hạng (trừ số hạng đầu và cuối) bằng tích của hai số hạng đứng kề bên nó: u_k^2 = u_(k-1) * u_(k+1) (với u_k > 0 hoặc xét trị tuyệt đối).
+
+4. Kiến thức cần ghi nhớ
+- Nhận diện cấp số nhân qua tỉ số u_(n+1) / u_n luôn là hằng số q.
+- Nắm vững công thức số hạng tổng quát u_n = u_1 * q^(n-1) và tổng S_n.

@@ -1,0 +1,28 @@
+--- CÔNG THỨC: BÀI 8 - MÔ TẢ SÓNG ---
+
+1. Các công thức quan trọng
+- Mối liên hệ giữa tốc độ, bước sóng, tần số và chu kì:
+  + lambda = v * T
+  + lambda = v / f
+- Tốc độ truyền sóng:
+  + v = lambda / T = lambda * f
+- Tần số và chu kì:
+  + f = 1 / T
+- Phương trình sóng tại nguồn O:
+  + u_O(t) = A * cos(omega * t + phi)
+- Phương trình sóng tại một điểm M cách nguồn O một khoảng x trên phương truyền sóng:
+  + u_M(t) = A * cos(omega * (t - x / v)) = A * cos(omega * t - 2 * pi * x / lambda)
+
+2. Giải thích ý nghĩa ký hiệu và đơn vị
+- lambda: Bước sóng (đơn vị: mét [m])
+- v: Tốc độ truyền sóng (đơn vị: mét trên giây [m/s])
+- T: Chu kì sóng (đơn vị: giây [s])
+- f: Tần số sóng (đơn vị: héc [Hz])
+- A: Biên độ sóng (đơn vị: mét [m] hoặc centimet [cm])
+- x (hoặc d): Khoảng cách từ nguồn đến điểm đang xét (đơn vị: [m])
+- u_M: Li độ dao động của phần tử tại M (đơn vị: [m] hoặc [cm])
+- omega: Tần số góc (đơn vị: rađian trên giây [rad/s])
+
+3. Điều kiện áp dụng
+- Môi trường truyền sóng phải là môi trường đàn hồi đồng tính và đẳng hướng.
+- Công thức truyền sóng áp dụng cho sóng hình sin lan truyền theo một phương cố định.

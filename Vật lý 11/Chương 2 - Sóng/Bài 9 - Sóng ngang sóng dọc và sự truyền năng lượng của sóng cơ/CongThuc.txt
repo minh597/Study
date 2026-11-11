@@ -1,0 +1,20 @@
+--- CÔNG THỨC: BÀI 9 - SÓNG NGANG SÓNG DỌC VÀ SỰ TRUYỀN NĂNG LƯỢNG CỦA SÓNG CƠ ---
+
+1. Các công thức quan trọng
+- Năng lượng của một phần tử môi trường dao động điều hòa:
+  + W = 1/2 * m * omega^2 * A^2 = 1/2 * m * (2 * pi * f)^2 * A^2
+- Công suất truyền năng lượng (Cường độ sóng I qua một diện tích S vuông góc với phương truyền sóng):
+  + I = W_total / t = P / S
+  + Mối liên hệ cường độ sóng và biên độ: I proportional to A^2
+
+2. Giải thích ý nghĩa ký hiệu và đơn vị
+- W: Năng lượng dao động (đơn vị: Jun [J])
+- m: Khối lượng phần tử (đơn vị: kilôgam [kg])
+- A: Biên độ sóng (đơn vị: [m])
+- f: Tần số (đơn vị: [Hz])
+- I: Cường độ sóng (đơn vị: Oát trên mét vuông [W/m^2])
+- P: Công suất phát sóng (đơn vị: Oát [W])
+- S: Diện tích mặt vuông góc phương truyền sóng (đơn vị: [m^2])
+
+3. Điều kiện áp dụng
+- Áp dụng cho các bài toán tính năng lượng sóng, công suất nguồn phát sóng và sự suy giảm cường độ sóng theo khoảng cách.

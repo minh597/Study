@@ -1,0 +1,23 @@
+--- LÝ THUYẾT: BÀI 8 - MÔ TẢ SÓNG ---
+
+1. Khái niệm sóng
+- Ví dụ thực tế: Khi thả một hòn sỏi xuống mặt nước tĩnh lặng, các vòng tròn gợn sóng lan rộng ra xung quanh.
+- Định nghĩa sóng: Sóng cơ là dao động lan truyền trong môi trường vật chất theo thời gian.
+
+2. Bản chất và đặc điểm
+- Sóng cơ truyền năng lượng và trạng thái dao động chứ không truyền các phần tử vật chất của môi trường.
+- Các phần tử của môi trường chỉ dao động tại chỗ quanh vị trí cân bằng của chúng.
+- Điều kiện để có sóng cơ: Có nguồn dao động và môi trường đàn hồi.
+
+3. Các tính chất và đại lượng đặc trưng
+- Biên độ sóng (A): Độ lệch lớn nhất của phần tử vật chất khỏi vị trí cân bằng.
+- Chu kì (T) và Tần số (f): Chu kì/tần số dao động của sóng chính là chu kì/tần số dao động của nguồn sóng.
+- Tốc độ truyền sóng (v): Tốc độ lan truyền dao động trong môi trường.
+- Bước sóng (lambda): Quãng đường mà sóng truyền đi được trong một chu kì dao động.
+
+4. Phân loại
+- Sóng dọc và sóng ngang (được nghiên cứu chi tiết ở bài sau).
+
+5. Kiến thức cần ghi nhớ
+- Bước sóng lambda = v * T = v / f.
+- Khoảng cách giữa hai điểm gần nhau nhất trên cùng một phương truyền sóng dao động cùng pha là lambda.

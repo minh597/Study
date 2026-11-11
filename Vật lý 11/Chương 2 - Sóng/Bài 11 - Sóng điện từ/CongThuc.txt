@@ -1,0 +1,22 @@
+--- CÔNG THỨC: BÀI 11 - SÓNG ĐIỆN TỪ ---
+
+1. Các công thức quan trọng
+- Liên hệ giữa bước sóng, tốc độ và tần số sóng điện từ:
+  + lambda = c * T = c / f
+  + c = f * lambda
+- Chu kì và tần số của mạch dao động LC (tạo ra sóng điện từ):
+  + T = 2 * pi * sqrt(L * C)
+  + f = 1 / (2 * pi * sqrt(L * C))
+- Bước sóng điện từ phát ra từ mạch dao động LC:
+  + lambda = c * T = 2 * pi * c * sqrt(L * C)
+
+2. Giải thích ý nghĩa ký hiệu và đơn vị
+- c: Tốc độ ánh sáng trong chân không (c = 3 * 10^8 [m/s])
+- lambda: Bước sóng điện từ (đơn vị: [m])
+- f: Tần số sóng điện từ (đơn vị: [Hz])
+- T: Chu kì dao động (đơn vị: [s])
+- L: Độ tự cảm của cuộn cảm (đơn vị: Henri [H])
+- C: Điện dung của tụ điện (đơn vị: Fara [F])
+
+3. Điều kiện áp dụng
+- Áp dụng khi tính toán bước sóng phát ra từ mạch dao động điện từ lý tưởng hoặc sóng điện từ truyền trong môi trường.

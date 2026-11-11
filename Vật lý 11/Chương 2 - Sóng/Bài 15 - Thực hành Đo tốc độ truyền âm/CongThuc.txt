@@ -1,0 +1,21 @@
+--- CÔNG THỨC: BÀI 15 - THỰC HÀNH ĐO TỐC ĐỘ TRUYỀN ÂM ---
+
+1. Các công thức quan trọng
+- Điều kiện cộng hưởng âm trong ống một đầu kín, một đầu hở:
+  + l = (2k + 1) * (lambda / 4)  (với k = 0, 1, 2, ...)
+- Khoảng cách giữa hai vị trí cộng hưởng âm liên tiếp:
+  + Delta_l = l_(n+1) - l_n = lambda / 2
+- Suy ra bước sóng:
+  + lambda = 2 * Delta_l = 2 * (l_(n+1) - l_n)
+- Tốc độ truyền âm:
+  + v = lambda * f = 2 * f * (l_(n+1) - l_n)
+- Tính giá trị trung bình và sai số thí nghiệm tương tự như các bài thực hành khác.
+
+2. Giải thích ý nghĩa ký hiệu và đơn vị
+- l: Chiều dài cột khí trong ống (đơn vị: [m] hoặc [cm])
+- lambda: Bước sóng của sóng âm trong không khí (đơn vị: [m])
+- f: Tần số của âm thoa (đơn vị: [Hz])
+- v: Tốc độ truyền âm trong không khí (đơn vị: [m/s])
+
+3. Điều kiện áp dụng
+- Áp dụng trong xử lí số liệu thực hành đo tốc độ truyền âm.

@@ -1,0 +1,28 @@
+--- LÝ THUYẾT: BÀI 5 - DÃY SỐ ---
+
+1. Khái niệm dãy số
+- Ví dụ thực tế: Sắp xếp các hình tam giác xếp liền nhau theo thứ tự tăng dần số que diêm tạo thành các số lượng 3, 5, 7, 9,... tạo thành một thứ tự xác định.
+- Định nghĩa: Mỗi hàm số u xác định trên tập hợp các số nguyên dương N* được gọi là một dãy số vô hạn (hoặc ngắn gọn là dãy số). Ký hiệu: u: N* -> R, n |-> u(n).
+- Thường viết dưới dạng khai triển: u_1, u_2, u_3, ..., u_n, ... trong đó u_1 là số hạng đầu, u_n là số hạng tổng quát.
+
+2. Bản chất và đặc điểm
+- Dãy số thực chất là một hàm số đặc biệt có tập xác định là tập hợp các số nguyên dương N*.
+- Dãy số hữu hạn là dãy số chỉ xác định trên tập hợp {1, 2, 3, ..., m} với m thuộc N*.
+
+3. Cách cho một dãy số
+- Cho bằng công thức của số hạng tổng quát u_n.
+- Cho bằng phương pháp truy hồi (cho số hạng đầu u_1 và hệ thức liên hệ giữa u_n và các số hạng đứng trước).
+- Cho bằng diễn đạt bằng lời.
+
+4. Dãy số tăng, dãy số giảm
+- Dãy số (u_n) được gọi là dãy số tăng nếu u_(n+1) > u_n với mọi n thuộc N*.
+- Dãy số (u_n) được gọi là dãy số giảm nếu u_(n+1) < u_n với mọi n thuộc N*.
+
+5. Dãy số bị chặn
+- Dãy số (u_n) được gọi là bị chặn trên nếu tồn tại số M sao cho u_n <= M với mọi n.
+- Dãy số (u_n) được gọi là bị chặn dưới nếu tồn tại số m sao cho u_n >= m với mọi n.
+- Dãy số vừa bị chặn trên vừa bị chặn dưới gọi là dãy số bị chặn (thoả mãn m <= u_n <= M).
+
+6. Kiến thức cần ghi nhớ
+- Phân biệt rõ dạng cho số hạng tổng quát và phương pháp truy hồi.
+- Xét tính tăng, giảm bằng cách xét hiệu u_(n+1) - u_n hoặc tỉ số u_(n+1) / u_n (khi u_n > 0).

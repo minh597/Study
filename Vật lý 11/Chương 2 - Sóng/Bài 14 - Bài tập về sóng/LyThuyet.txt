@@ -1,0 +1,14 @@
+--- LÝ THUYẾT: BÀI 14 - BÀI TẬP VỀ SÓNG ---
+
+1. Mục đích tổng hợp
+- Hệ thống hóa và củng cố toàn bộ các kiến thức trọng tâm về sóng cơ: phương trình sóng, tốc độ truyền sóng, bước sóng, năng lượng sóng, giao thoa sóng và sóng dừng.
+
+2. Phương pháp giải các dạng bài tập
+- Dạng 1: Tính toán các đại lượng đặc trưng của sóng (lambda, v, f, T, u).
+- Dạng 2: Bài toán về độ lệch pha giữa hai điểm trên phương truyền sóng.
+- Dạng 3: Bài toán giao thoa sóng (xác định số điểm cực đại, cực tích giữa hai nguồn).
+- Dạng 4: Bài toán sóng dừng trên dây.
+
+3. Kiến thức cốt lõi cần ghi nhớ
+- Luôn đổi đơn vị về hệ SI chuẩn (mét, giây, héc, rad/s) trước khi tính toán.
+- Kiểm tra điều kiện biên và pha dao động khi giải các bài toán sóng phức tạp.

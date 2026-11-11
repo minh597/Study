@@ -1,0 +1,17 @@
+--- LÝ THUYẾT: BÀI 9 - SÓNG NGANG SÓNG DỌC VÀ SỰ TRUYỀN NĂNG LƯỢNG CỦA SÓNG CƠ ---
+
+1. Khái niệm sóng ngang và sóng dọc
+- Sóng ngang: Là sóng trong đó các phần tử của môi trường dao động theo phương vuông góc với phương truyền sóng. (Ví dụ: sóng trên mặt nước, sóng trên sợi dây).
+- Sóng dọc: Là sóng trong đó các phần tử của môi trường dao động theo phương trùng với phương truyền sóng. (Ví dụ: sóng âm trong không khí, sóng nén lò xo).
+
+2. Đặc điểm môi trường truyền
+- Sóng ngang truyền được trong chất rắn và bề mặt chất lỏng.
+- Sóng dọc truyền được trong cả chất rắn, chất lỏng và chất khí.
+
+3. Sự truyền năng lượng của sóng cơ
+- Sóng cơ là quá trình truyền năng lượng. Khi sóng truyền qua, các phần tử môi trường nhận năng lượng từ nguồn và dao động.
+- Năng lượng sóng tỉ lệ thuận với bình phương biên độ sóng (E ~ A^2) và bình phương tần số.
+
+4. Kiến thức cần ghi nhớ
+- Phân biệt rõ phương dao động và phương truyền sóng đối với sóng ngang (vuông góc) và sóng dọc (trùng phương).
+- Năng lượng sóng lan truyền theo sóng đi xa nguồn.

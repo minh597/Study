@@ -1,0 +1,22 @@
+--- CÔNG THỨC: BÀI 10 - THỰC HÀNH ĐO TẦN SỐ CỦA SÓNG ÂM ---
+
+1. Các công thức quan trọng
+- Tính chu kì sóng âm từ màn hình dao động kí:
+  + T = N_div * S_t
+- Tính tần số sóng âm:
+  + f = 1 / T = 1 / (N_div * S_t)
+- Tính giá trị trung bình:
+  + f_tb = (f_1 + f_2 + ... + f_n) / n
+- Sai số tuyệt đối và sai số tỉ đối:
+  + Delta_f = |f_tb - f_i|_max + Delta_dc
+  + epsilon = (Delta_f / f_tb) * 100%
+
+2. Giải thích ý nghĩa ký hiệu và đơn vị
+- N_div: Số ô chia trên trục thời gian của một chu kì sóng (không có đơn vị)
+- S_t: Độ nhạy thời gian trên một ô chia (đơn vị: s/div hoặc ms/div)
+- T: Chu kì sóng âm (đơn vị: [s])
+- f: Tần số sóng âm (đơn vị: [Hz])
+- Delta_dc: Sai số dụng cụ của thiết bị
+
+3. Điều kiện áp dụng
+- Áp dụng trong các bài toán xử lí số liệu thực hành đo lường sóng âm.

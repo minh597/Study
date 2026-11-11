@@ -1,0 +1,24 @@
+--- CÔNG THỨC: BÀI 7 - CẤP SỐ NHÂN ---
+
+1. Các công thức quan trọng
+- Công thức truy hồi: u_(n+1) = u_n * q
+- Công thức tính công bội: q = u_(n+1) / u_n (với u_n != 0)
+- Công thức số hạng tổng quát: u_n = u_1 * q^(n-1) (với n >= 2)
+  + Biểu diễn tổng quát: u_n = u_k * q^(n-k)
+- Công thức tính tổng n số hạng đầu tiên S_n:
+  + Khi q = 1: S_n = n * u_1
+  + Khi q != 1: S_n = (u_1 * (1 - q^n)) / (1 - q) = (u_1 * (q^n - 1)) / (q - 1)
+
+2. Giải thích ý nghĩa ký hiệu
+- u_1: Số hạng đầu tiên
+- u_n: Số hạng thứ n
+- q: Công bội của cấp số nhân
+- n: Số lượng số hạng
+- S_n: Tổng của n số hạng đầu tiên
+
+3. Điều kiện áp dụng
+- Áp dụng khi mỗi số hạng phía sau nhận được bằng cách nhân số hạng trước với công bội q không đổi.
+
+4. Công thức biến đổi thường gặp
+- u_p * u_q = u_r * u_s nếu p + q = r + s
+- Ba số a, b, c lập thành cấp số nhân khi và chỉ khi a * c = b^2.

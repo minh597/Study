@@ -1,0 +1,17 @@
+--- LÝ THUYẾT: BÀI 13 - SÓNG DỪNG ---
+
+1. Khái niệm sóng dừng
+- Định nghĩa: Sóng dừng là hiện tượng sóng phản xạ giao thoa với sóng tới trên cùng một phương truyền sóng, tạo ra các điểm đứng yên gọi là nút sóng và các điểm dao động với biên độ cực đại gọi là bụng sóng.
+
+2. Bản chất và đặc điểm
+- Nút sóng: Các điểm không dao động (biên độ bằng 0).
+- Bụng sóng: Các điểm dao động với biên độ cực lớn (bằng 2A).
+- Khoảng cách giữa hai nút sóng liên tiếp hoặc hai bụng sóng liên tiếp bằng nửa bước sóng (lambda / 2).
+- Khoảng cách giữa một nút và một bụng liên tiếp bằng một phần tư bước sóng (lambda / 4).
+
+3. Điều kiện có sóng dừng
+- Dây hai đầu cố định: Chiều dài dây l phải bằng một số nguyên lần nửa bước sóng.
+- Dây một đầu cố định, một đầu tự do: Chiều dài dây l bằng một số lẻ lần một phần tư bước sóng.
+
+4. Kiến thức cần ghi nhớ
+- Nắm vững công thức sóng dừng cho hai trường hợp đầu cố định / đầu tự do.

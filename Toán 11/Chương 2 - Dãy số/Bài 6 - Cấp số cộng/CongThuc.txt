@@ -1,0 +1,24 @@
+--- CÔNG THỨC: BÀI 6 - CẤP SỐ CỘNG ---
+
+1. Các công thức quan trọng
+- Công thức truy hồi: u_(n+1) = u_n + d
+- Công thức tính công sai: d = u_(n+1) - u_n
+- Công thức số hạng tổng quát: u_n = u_1 + (n - 1)d (với n >= 2)
+  + Biểu diễn qua bất kì số hạng nào: u_n = u_k + (n - k)d
+- Công thức tính tổng n số hạng đầu tiên S_n:
+  + S_n = (n(u_1 + u_n)) / 2
+  + S_n = n*u_1 + (n(n - 1)d) / 2
+
+2. Giải thích ý nghĩa ký hiệu
+- u_1: Số hạng đầu tiên
+- u_n: Số hạng thứ n
+- d: Công sai của cấp số cộng
+- n: Số lượng số hạng
+- S_n: Tổng của n số hạng đầu tiên
+
+3. Điều kiện áp dụng
+- Áp dụng cho dãy số thoả mãn tính chất cộng đều với công sai d không đổi.
+
+4. Công thức biến đổi thường gặp
+- u_p + u_q = u_r + u_s nếu p + q = r + s
+- Ba số a, b, c lập thành cấp số cộng khi và chỉ khi a + c = 2b.

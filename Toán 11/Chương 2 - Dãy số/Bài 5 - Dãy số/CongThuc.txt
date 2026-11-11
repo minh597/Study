@@ -1,0 +1,25 @@
+--- CÔNG THỨC: BÀI 5 - DÃY SỐ ---
+
+1. Các công thức và biểu thức quan trọng
+- Số hạng tổng quát: u_n = f(n)
+- Hệ thức truy hồi: u_(n+1) = g(u_n) (hoặc liên hệ nhiều số hạng trước).
+- Xét tính tăng giảm:
+  + Xét hiệu: Delta = u_(n+1) - u_n
+    * Nếu Delta > 0 => Dãy số tăng.
+    * Nếu Delta < 0 => Dãy số giảm.
+  + Xét thương (với u_n > 0): T = u_(n+1) / u_n
+    * Nếu T > 1 => Dãy số tăng.
+    * Nếu T < 1 => Dãy số giảm.
+
+2. Giải thích ý nghĩa ký hiệu và đơn vị
+- n: Số nguyên dương (n thuộc N*) chỉ số thứ tự của số hạng.
+- u_n: Số hạng tổng quát (hoặc số hạng thứ n) của dãy số.
+- u_1: Số hạng đầu tiên của dãy số.
+
+3. Điều kiện áp dụng
+- Tập xác định của chỉ số n luôn là N* = {1, 2, 3, ...}.
+- Khi dùng phương pháp xét thương T, bắt buộc tất cả các số hạng của dãy phải dương (u_n > 0).
+
+4. Ví dụ áp dụng
+- Cho dãy số u_n = 2n + 1. Tính u_1, u_2, u_3.
+  + Giải: u_1 = 2(1) + 1 = 3; u_2 = 5; u_3 = 7.

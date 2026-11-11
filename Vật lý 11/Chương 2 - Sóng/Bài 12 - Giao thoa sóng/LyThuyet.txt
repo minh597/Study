@@ -1,0 +1,16 @@
+--- LÝ THUYẾT: BÀI 12 - GIAO THOA SÓNG ---
+
+1. Khái niệm giao thoa sóng
+- Ví dụ thực tế: Hai viên sỏi rơi xuống mặt nước tạo ra hai hệ thống gợn sóng xen kẽ nhau.
+- Định nghĩa: Giao thoa sóng là hiện tượng tổng hợp của hai hay nhiều sóng kết hợp gặp nhau trong môi trường, tạo ra các gợn sóng ổn định (các điểm dao động mạnh lên và các điểm đứng yên).
+
+2. Nguồn kết hợp
+- Hai nguồn sóng kết hợp là hai nguồn dao động cùng tần số và có độ lệch pha không đổi theo thời gian.
+
+3. Bản chất và đặc điểm
+- Tại những điểm hai sóng gặp nhau cùng pha, chúng tăng cường lẫn nhau tạo thành vân cực đại giao thoa.
+- Tại những điểm hai sóng gặp nhau ngược pha, chúng triệt tiêu lẫn nhau tạo thành vân cực tiểu giao thoa.
+
+4. Kiến thức cần ghi nhớ
+- Điều kiện cực đại giao thoa (hai nguồn cùng pha): hiệu đường đi d2 - d1 = k * lambda (k thuộc Z).
+- Điều kiện cực tiểu giao thoa (hai nguồn cùng pha): hiệu đường đi d2 - d1 = (k + 0.5) * lambda.

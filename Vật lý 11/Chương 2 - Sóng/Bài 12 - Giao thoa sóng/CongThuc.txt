@@ -1,0 +1,17 @@
+--- CÔNG THỨC: BÀI 12 - GIAO THOA SÓNG ---
+
+1. Các công thức quan trọng (Trường hợp hai nguồn kết hợp cùng pha u_1 = u_2)
+- Điều kiện điểm M có biên độ cực đại (dao động mạnh nhất):
+  + d_2 - d_1 = k * lambda (với k thuộc Z)
+- Điều kiện điểm M có biên độ cực tiểu (đứng yên):
+  + d_2 - d_1 = (k + 0.5) * lambda = (2k + 1) * lambda / 2 (với k thuộc Z)
+- Khoảng cách giữa hai cực đại liên tiếp trên đoạn thẳng nối hai nguồn:
+  + Delta = lambda / 2
+
+2. Giải thích ý nghĩa ký hiệu và đơn vị
+- d_1, d_2: Khoảng cách từ điểm M đến nguồn S_1 và S_2 (đơn vị: [m])
+- lambda: Bước sóng (đơn vị: [m])
+- k: Số nguyên (0, +-1, +-2, ...)
+
+3. Điều kiện áp dụng
+- Áp dụng khi hai nguồn phát sóng kết hợp (cùng tần số, độ lệch pha không đổi).

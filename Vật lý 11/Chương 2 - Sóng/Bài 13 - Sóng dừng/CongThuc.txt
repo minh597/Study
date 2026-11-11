@@ -1,0 +1,19 @@
+--- CÔNG THỨC: BÀI 13 - SÓNG DỪNG ---
+
+1. Các công thức quan trọng
+- Trường hợp 1: Sóng dừng trên dây hai đầu cố định
+  + Điều kiện: l = k * (lambda / 2) = (k * v) / (2 * f)
+  + Số bụng sóng = k, số nút sóng = k + 1 (với k là số nguyên dương, số bó sóng là k).
+- Trường hợp 2: Sóng dừng trên dây một đầu cố định, một đầu tự do
+  + Điều kiện: l = (2k + 1) * (lambda / 4) = ((2k + 1) * v) / (4 * f)
+  + Số bụng sóng = số nút sóng = k + 1.
+
+2. Giải thích ý nghĩa ký hiệu và đơn vị
+- l: Chiều dài dây đàn hồi (đơn vị: [m])
+- lambda: Bước sóng (đơn vị: [m])
+- k: Số bó sóng (hoặc số nguyên k >= 1)
+- v: Tốc độ truyền sóng trên dây (đơn vị: [m/s])
+- f: Tần số sóng (đơn vị: [Hz])
+
+3. Điều kiện áp dụng
+- Áp dụng cho các bài toán về đàn guitar, sáo, dây đàn hồi có tạo sóng dừng.

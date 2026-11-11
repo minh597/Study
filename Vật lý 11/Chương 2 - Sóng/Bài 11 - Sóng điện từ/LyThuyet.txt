@@ -1,0 +1,17 @@
+--- LÝ THUYẾT: BÀI 11 - SÓNG ĐIỆN TỪ ---
+
+1. Khái niệm sóng điện từ
+- Định nghĩa: Sóng điện từ là quá trình lan truyền trong không gian của điện trường biến thiên và từ trường biến thiên lan truyền lẫn nhau.
+
+2. Bản chất và đặc điểm
+- Sóng điện từ là sóng ngang, trong đó vectơ cường độ điện trường E và vectơ cảm ứng từ B luôn vuông góc với nhau và vuông góc với phương truyền sóng (tam diện thuận E - B - v).
+- Sóng điện từ lan truyền được trong chân không (khác với sóng cơ không truyền được trong chân không).
+- Tốc độ truyền sóng điện từ trong chân không lớn nhất, kí hiệu là c = 3 * 10^8 m/s.
+- Sóng điện từ tuân theo các định luật truyền thẳng, phản xạ, khúc xạ và hiện tượng giao thoa.
+
+3. Phân loại thang sóng điện từ
+- Sóng vô tuyến, tia hồng ngoại, ánh sáng nhìn thấy, tia tử ngoại, tia X, tia gamma (xếp theo thứ tự tần số tăng dần và bước sóng giảm dần).
+
+4. Kiến thức cần ghi nhớ
+- Tốc độ ánh sáng trong chân không c = 3 * 10^8 m/s.
+- Công thức bước sóng điện từ: lambda = c * T = c / f.

@@ -1,0 +1,17 @@
+--- CÔNG THỨC: BÀI 14 - BÀI TẬP VỀ SÓNG ---
+
+1. Tổng hợp các công thức cốt lõi
+- Bước sóng và tốc độ: lambda = v * T = v / f
+- Độ lệch pha Delta_phi giữa hai điểm cách nguồn khoảng x_1, x_2 trên cùng phương truyền sóng:
+  + Delta_phi = (2 * pi * Delta_x) / lambda
+- Giao thoa (Cùng pha): d_2 - d_1 = k * lambda (Cực đại)
+- Sóng dừng hai đầu cố định: l = k * (lambda / 2)
+- Sóng dừng một đầu cố định, một đầu tự do: l = (2k + 1) * (lambda / 4)
+
+2. Giải thích ý nghĩa ký hiệu
+- Delta_x = |x_2 - x_1|: Khoảng cách giữa hai điểm (đơn vị: [m])
+- Delta_phi: Độ lệch pha (đơn vị: [rad])
+- Các đại lượng khác giữ nguyên quy ước chuẩn.
+
+3. Điều kiện áp dụng
+- Áp dụng làm sổ tay công thức tổng hợp khi giải các bài tập ôn tập chương Sóng.

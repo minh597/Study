@@ -1,0 +1,17 @@
+--- LÝ THUYẾT: BÀI 6 - CẤP SỐ CỘNG ---
+
+1. Khái niệm
+- Ví dụ thực tế: Số tiền tiết kiệm tăng đều mỗi tháng theo một quy luật cố định.
+- Định nghĩa: Cấp số cộng là một dãy số (hữu hạn hoặc vô hạn), trong đó kể từ số hạng thứ hai, mỗi số hạng đều bằng tổng của số hạng đứng ngay trước nó với một số không đổi d.
+- Số d được gọi là công sai của cấp số cộng.
+
+2. Bản chất và đặc điểm
+- Công thức truy hồi đặc trưng: u_(n+1) = u_n + d với mọi n thuộc N*.
+- Nếu d > 0, cấp số cộng là dãy số tăng; nếu d < 0, cấp số cộng là dãy số giảm; nếu d = 0, cấp số cộng là dãy số không đổi.
+
+3. Tính chất các số hạng của cấp số cộng
+- Mỗi số hạng (trừ số hạng đầu và cuối nếu hữu hạn) đều là trung bình cộng của hai số hạng đứng kề bên nó: u_k = (u_(k-1) + u_(k+1)) / 2.
+
+4. Kiến thức cần ghi nhớ
+- Nhận diện nhanh cấp số cộng qua hiệu số giữa hai số hạng liên tiếp u_(n+1) - u_n luôn là hằng số d.
+- Nắm vững công thức số hạng tổng quát và công thức tính tổng n số hạng đầu tiên.
