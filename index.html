@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Hub - Thư Viện Kiến Thức GitHub</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkbg: '#0b0f17',
+                        darkcard: '#131926',
+                        darkborder: '#1f293d',
+                        accent: '#3b82f6'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Marked.js (Markdown Parser) -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <!-- DOMPurify (HTML Sanitizer) -->
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+    
+    <!-- MathJax (LaTeX Formula Engine) -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['[', ']']]
+            },
+            svg: { fontCache: 'global' },
+            startup: { typeset: false }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0b0f17; color: #e5e7eb; }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #0b0f17; }
+        ::-webkit-scrollbar-thumb { background: #1f293d; border-radius: 9999px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+        
+        .markdown-content h1 { font-size: 1.75rem; font-weight: 700; color: #60a5fa; margin-top: 1rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #1f293d; }
+        .markdown-content h2 { font-size: 1.35rem; font-weight: 600; color: #93c5fd; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        .markdown-content h3 { font-size: 1.15rem; font-weight: 600; color: #bfdbfe; margin-top: 1.25rem; margin-bottom: 0.5rem; }
+        .markdown-content p { line-height: 1.75; margin-bottom: 1rem; color: #d1d5db; }
+        .markdown-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
+        .markdown-content ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 1rem; }
+        .markdown-content li { margin-bottom: 0.35rem; }
+        .markdown-content blockquote { 
+            background: rgba(30, 58, 138, 0.2); 
+            border-left: 4px solid #3b82f6; 
+            padding: 0.75rem 1rem; 
+            margin: 1.25rem 0; 
+            border-radius: 0 0.5rem 0.5rem 0;
+            color: #94a3b8;
+        }
+        .markdown-content code { background: #1e293b; padding: 0.15rem 0.4rem; border-radius: 0.25rem; font-size: 0.9em; color: #f43f5e; }
+        .markdown-content pre { background: #0f172a; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; border: 1px solid #1f293d; margin-bottom: 1rem; }
+        .markdown-content pre code { background: transparent; padding: 0; color: #e2e8f0; }
+
+        mjx-container[jax="SVG"][display="true"] {
+            background: rgba(17, 24, 39, 0.7);
+            padding: 1rem;
+            border-radius: 0.75rem;
+            border: 1px solid #1f293d;
+            margin: 1.25rem 0 !important;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body class="h-screen flex overflow-hidden bg-darkbg text-gray-200">
+
+    <!-- Mobile Navigation Overlay -->
+    <div id="mobile-overlay" class="fixed inset-0 bg-black/60 z-30 hidden lg:hidden backdrop-blur-sm"></div>
+
+    <!-- Sidebar Bar -->
+    <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 w-80 bg-darkcard border-r border-darkborder z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out flex flex-col justify-between">
+        <div class="p-4 flex flex-col h-full">
+            
+            <!-- Logo Header -->
+            <div class="flex items-center justify-between pb-4 mb-3 border-b border-darkborder">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
+                        <i class="fa-solid fa-book-open text-lg"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-lg text-white tracking-wide">STUDY HUB</h1>
+                        <p class="text-[11px] text-gray-400" id="repo-subtitle">Đang tải...</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-1">
+                    <button id="btn-open-settings" class="text-gray-400 hover:text-white p-1.5 rounded-lg hover:bg-gray-800 transition-colors" title="Cấu hình Repository">
+                        <i class="fa-solid fa-gear text-sm"></i>
+                    </button>
+                    <button id="close-sidebar-btn" class="lg:hidden text-gray-400 hover:text-white p-1.5">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Fast Search Input -->
+            <div class="mb-3 relative">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+                <input type="text" id="search-input" placeholder="Tìm kiếm bài học..." class="w-full bg-gray-900 border border-darkborder rounded-xl pl-9 pr-3 py-2 text-xs text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-all">
+            </div>
+
+            <!-- Subject & Chapter Dynamic Tree Navigation -->
+            <div class="flex-1 overflow-y-auto pr-1 space-y-2" id="sidebar-tree">
+                <div class="py-8 text-center text-gray-500 space-y-2">
+                    <i class="fa-solid fa-circle-notch fa-spin text-blue-500"></i>
+                    <p class="text-xs">Đang quét GitHub Repository...</p>
+                </div>
+            </div>
+
+            <!-- Footer Sync Info -->
+            <div class="pt-3 border-t border-darkborder text-[11px] text-gray-400 text-center flex items-center justify-between">
+                <span id="repo-display-tag" class="truncate max-w-[200px]"><i class="fa-brands fa-github mr-1 text-blue-400"></i> GitHub</span>
+                <button id="btn-reload-manifest" class="hover:text-white transition-colors" title="Tải lại thư mục">
+                    <i class="fa-solid fa-rotate-right"></i>
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Workspace Content Area -->
+    <div class="flex-1 flex flex-col h-full overflow-hidden">
+        
+        <!-- Top Navigation Bar -->
+        <header class="h-14 border-b border-darkborder bg-darkcard/50 backdrop-blur-md px-4 flex items-center justify-between z-20">
+            <div class="flex items-center gap-3">
+                <button id="open-sidebar-btn" class="lg:hidden p-2 rounded-lg text-gray-300 hover:bg-gray-800">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+
+                <!-- Breadcrumbs -->
+                <nav id="breadcrumbs" class="flex items-center gap-2 text-xs text-gray-400">
+                    <span class="text-gray-300 font-medium" id="bc-subject">Môn học</span>
+                    <i class="fa-solid fa-chevron-right text-[9px] text-gray-600"></i>
+                    <span class="text-gray-300 font-medium" id="bc-chapter">Chương</span>
+                    <i class="fa-solid fa-chevron-right text-[9px] text-gray-600"></i>
+                    <span class="text-blue-400 font-semibold" id="bc-lesson">Bài học</span>
+                </nav>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <!-- Return Home Button -->
+                <button id="btn-back-home" class="px-3 py-1.5 rounded-lg bg-gray-800 hover:bg-gray-700 text-xs text-gray-300 transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-house"></i>
+                    <span class="hidden sm:inline">Trang chủ</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Dynamic Viewer -->
+        <main class="flex-1 overflow-y-auto p-4 md:p-8" id="main-container">
+            
+            <!-- Default Home Welcome State -->
+            <section id="view-home" class="max-w-4xl mx-auto space-y-6">
+                <div class="bg-darkcard border border-darkborder p-8 rounded-2xl relative overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="relative z-10 space-y-4">
+                        <span class="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold">
+                            <i class="fa-solid fa-book-bookmark mr-1"></i> Thư Viện Kiến Thức GitHub
+                        </span>
+                        <h2 class="text-2xl md:text-3xl font-bold text-white">Study Hub Thông Minh</h2>
+                        <p class="text-gray-400 text-xs md:text-sm leading-relaxed" id="home-repo-desc">
+                            Đang kết nối tới GitHub Repository để tải tài liệu học tập...
+                        </p>
+                        <div class="pt-2 flex items-center gap-3">
+                            <button id="btn-change-repo-hero" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-semibold transition-all">
+                                <i class="fa-solid fa-code-branch mr-1.5"></i> Đổi Repository Khác
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subjects Quick List -->
+                <div>
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Danh sách môn học</h3>
+                    <div id="home-subjects-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"></div>
+                </div>
+            </section>
+
+            <!-- Lesson Content State -->
+            <section id="view-lesson" class="max-w-4xl mx-auto hidden space-y-6">
+                
+                <!-- Content Box Card -->
+                <div class="bg-darkcard border border-darkborder p-6 md:p-8 rounded-2xl min-h-[400px]">
+                    <div id="lesson-loading" class="py-16 text-center text-gray-400 space-y-3">
+                        <i class="fa-solid fa-circle-notch fa-spin text-3xl text-blue-500"></i>
+                        <p class="text-xs">Đang tải tài liệu từ GitHub...</p>
+                    </div>
+
+                    <div id="lesson-body" class="markdown-content hidden"></div>
+
+                    <div id="lesson-error" class="py-16 text-center text-gray-500 hidden space-y-3">
+                        <i class="fa-solid fa-file-circle-xmark text-4xl text-gray-600"></i>
+                        <p class="text-xs" id="error-message">Không tìm thấy hoặc không thể đọc file bài học này.</p>
+                    </div>
+                </div>
+
+                <!-- Prev / Next Navigation Bar -->
+                <div class="flex items-center justify-between pt-2">
+                    <button id="btn-prev-lesson" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-300 text-xs font-semibold disabled:opacity-40 disabled:pointer-events-none transition-all">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>Bài trước</span>
+                    </button>
+                    <button id="btn-next-lesson" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold disabled:opacity-40 disabled:pointer-events-none transition-all">
+                        <span>Bài tiếp theo</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Repository Settings Modal -->
+    <div id="repo-modal" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-darkcard border border-darkborder rounded-2xl w-full max-w-md p-6 space-y-4 shadow-2xl">
+            <div class="flex items-center justify-between pb-3 border-b border-darkborder">
+                <h3 class="font-bold text-white text-base"><i class="fa-solid fa-gear text-blue-500 mr-2"></i> Cấu Hình GitHub Repository</h3>
+                <button id="close-modal-btn" class="text-gray-400 hover:text-white p-1">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div class="space-y-3 text-xs">
+                <div>
+                    <label class="block text-gray-400 font-medium mb-1">GitHub Owner / Username</label>
+                    <input type="text" id="input-owner" class="w-full bg-gray-900 border border-darkborder rounded-xl px-3 py-2 text-gray-200 focus:outline-none focus:border-blue-500" placeholder="Ví dụ: minh597">
+                </div>
+                <div>
+                    <label class="block text-gray-400 font-medium mb-1">Repository Name</label>
+                    <input type="text" id="input-repo" class="w-full bg-gray-900 border border-darkborder rounded-xl px-3 py-2 text-gray-200 focus:outline-none focus:border-blue-500" placeholder="Ví dụ: Hi hoặc StudyHub">
+                </div>
+                <div>
+                    <label class="block text-gray-400 font-medium mb-1">Branch Name</label>
+                    <input type="text" id="input-branch" class="w-full bg-gray-900 border border-darkborder rounded-xl px-3 py-2 text-gray-200 focus:outline-none focus:border-blue-500" value="main">
+                </div>
+            </div>
+            <div class="flex justify-end gap-2 pt-3 border-t border-darkborder">
+                <button id="btn-save-repo" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-semibold transition-all">
+                    Lưu & Đồng Bộ
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application JavaScript Engine -->
+    <script>
+        /**
+         * CONFIGURABLE GITHUB REPOSITORY SYSTEM
+         * Tự động lưu cấu hình vào localStorage hoặc lấy mặc định
+         */
+        const CONFIG = {
+            get owner() { return localStorage.getItem('gh_owner') || 'minh597'; },
+            get repo() { return localStorage.getItem('gh_repo') || 'Hi'; },
+            get branch() { return localStorage.getItem('gh_branch') || 'main'; },
+            set(owner, repo, branch) {
+                localStorage.setItem('gh_owner', owner.trim());
+                localStorage.setItem('gh_repo', repo.trim());
+                localStorage.setItem('gh_branch', branch.trim() || 'main');
+            }
+        };
+
+        const app = {
+            catalogData: [],
+            flatLessonsList: [],
+            currentLessonIndex: -1,
+
+            init() {
+                this.updateRepoUIInfo();
+                this.setupUIListeners();
+                this.fetchGitHubStructure();
+            },
+
+            updateRepoUIInfo() {
+                document.getElementById('repo-subtitle').innerText = `${CONFIG.owner}/${CONFIG.repo}`;
+                document.getElementById('repo-display-tag').innerHTML = `<i class="fa-brands fa-github mr-1 text-blue-400"></i> ${CONFIG.owner}/${CONFIG.repo}`;
+                document.getElementById('home-repo-desc').innerText = 
+                    `Đang đọc dữ liệu trực tiếp từ repository công khai: ${CONFIG.owner}/${CONFIG.repo} (branch: ${CONFIG.branch}). Thêm thư mục hoặc file .txt trực tiếp trên GitHub để cập nhật bài học.`;
+            },
+
+            // Quét toàn bộ cây thư mục GitHub API Trees (hỗ trợ mọi repository công khai)
+            async fetchGitHubStructure() {
+                const sidebarTree = document.getElementById('sidebar-tree');
+                sidebarTree.innerHTML = `
+                    <div class="py-8 text-center text-gray-500 space-y-2">
+                        <i class="fa-solid fa-circle-notch fa-spin text-blue-500"></i>
+                        <p class="text-xs">Đang quét thư mục GitHub...</p>
+                    </div>`;
+
+                try {
+                    const apiUrl = `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/git/trees/${CONFIG.branch}?recursive=1`;
+                    const res = await fetch(apiUrl);
+                    
+                    if (!res.ok) {
+                        throw new Error(`GitHub API Error: ${res.status}`);
+                    }
+
+                    const data = await res.json();
+                    this.parseGitHubTree(data.tree || []);
+                    this.buildFlatLessonsList();
+                    this.renderSidebarTree(this.catalogData);
+                    this.renderHomeSubjects();
+                } catch (err) {
+                    sidebarTree.innerHTML = `
+                        <div class="py-6 px-3 text-center text-red-400 space-y-2">
+                            <i class="fa-solid fa-triangle-exclamation text-xl"></i>
+                            <p class="text-xs">Không tìm thấy repository hoặc lỗi kết nối. Vui lòng kiểm tra lại cấu hình tên Repository.</p>
+                            <button onclick="app.openSettingsModal()" class="mt-2 px-3 py-1 bg-blue-600 text-white rounded-lg text-[10px]">Cấu hình lại</button>
+                        </div>`;
+                    console.error('Scan Error:', err);
+                }
+            },
+
+            // Phân tích tự động cấu trúc: Thư mục Cấp 1 (Môn học) -> Cấp 2 (Chương) -> File .txt (Bài học)
+            parseGitHubTree(tree) {
+                const subjectsMap = {};
+
+                tree.forEach(item => {
+                    if (item.type === 'blob' && (item.path.endsWith('.txt') || item.path.endsWith('.md'))) {
+                        const parts = item.path.split('/');
+                        
+                        if (parts.length >= 3) {
+                            const subjectName = parts[0];
+                            const chapterName = parts[1];
+                            const fileName = parts[parts.length - 1];
+                            const lessonName = fileName.replace(/\.(txt|md)$/i, '');
+
+                            if (!subjectsMap[subjectName]) {
+                                subjectsMap[subjectName] = {};
+                            }
+                            if (!subjectsMap[subjectName][chapterName]) {
+                                subjectsMap[subjectName][chapterName] = [];
+                            }
+
+                            subjectsMap[subjectName][chapterName].push({
+                                name: lessonName,
+                                path: item.path
+                            });
+                        }
+                    }
+                });
+
+                this.catalogData = Object.keys(subjectsMap).map(subject => ({
+                    subject: subject,
+                    chapters: Object.keys(subjectsMap[subject]).map(chapter => ({
+                        chapter: chapter,
+                        lessons: subjectsMap[subject][chapter]
+                    }))
+                }));
+            },
+
+            buildFlatLessonsList() {
+                this.flatLessonsList = [];
+                this.catalogData.forEach(s => {
+                    s.chapters.forEach(c => {
+                        c.lessons.forEach(l => {
+                            this.flatLessonsList.push({
+                                subject: s.subject,
+                                chapter: c.chapter,
+                                name: l.name,
+                                path: l.path
+                            });
+                        });
+                    });
+                });
+            },
+
+            setupUIListeners() {
+                const sidebar = document.getElementById('sidebar');
+                const overlay = document.getElementById('mobile-overlay');
+                const modal = document.getElementById('repo-modal');
+
+                document.getElementById('open-sidebar-btn')?.addEventListener('click', () => {
+                    sidebar.classList.remove('-translate-x-full');
+                    overlay.classList.remove('hidden');
+                });
+
+                const closeSidebar = () => {
+                    sidebar.classList.add('-translate-x-full');
+                    overlay.classList.add('hidden');
+                };
+
+                document.getElementById('close-sidebar-btn')?.addEventListener('click', closeSidebar);
+                overlay?.addEventListener('click', closeSidebar);
+
+                document.getElementById('btn-back-home')?.addEventListener('click', () => this.showHomeView());
+                document.getElementById('btn-reload-manifest')?.addEventListener('click', () => this.fetchGitHubStructure());
+
+                // Modal settings
+                const openModal = () => {
+                    document.getElementById('input-owner').value = CONFIG.owner;
+                    document.getElementById('input-repo').value = CONFIG.repo;
+                    document.getElementById('input-branch').value = CONFIG.branch;
+                    modal.classList.remove('hidden');
+                };
+                const closeModal = () => modal.classList.add('hidden');
+
+                document.getElementById('btn-open-settings')?.addEventListener('click', openModal);
+                document.getElementById('btn-change-repo-hero')?.addEventListener('click', openModal);
+                document.getElementById('close-modal-btn')?.addEventListener('click', closeModal);
+
+                document.getElementById('btn-save-repo')?.addEventListener('click', () => {
+                    const owner = document.getElementById('input-owner').value;
+                    const repo = document.getElementById('input-repo').value;
+                    const branch = document.getElementById('input-branch').value;
+                    if (owner && repo) {
+                        CONFIG.set(owner, repo, branch);
+                        closeModal();
+                        this.updateRepoUIInfo();
+                        this.fetchGitHubStructure();
+                        this.showHomeView();
+                    }
+                });
+
+                document.getElementById('btn-prev-lesson')?.addEventListener('click', () => {
+                    if (this.currentLessonIndex > 0) {
+                        this.openLessonByIndex(this.currentLessonIndex - 1);
+                    }
+                });
+
+                document.getElementById('btn-next-lesson')?.addEventListener('click', () => {
+                    if (this.currentLessonIndex < this.flatLessonsList.length - 1) {
+                        this.openLessonByIndex(this.currentLessonIndex + 1);
+                    }
+                });
+
+                document.getElementById('search-input')?.addEventListener('input', (e) => {
+                    const query = e.target.value.trim().toLowerCase();
+                    this.filterSidebarTree(query);
+                });
+
+                document.addEventListener('click', (e) => {
+                    const subjBtn = e.target.closest('[data-action="toggle-subject"]');
+                    if (subjBtn) {
+                        const targetId = subjBtn.getAttribute('data-target');
+                        const el = document.getElementById(targetId);
+                        const arrow = subjBtn.querySelector('.arrow-icon');
+                        el?.classList.toggle('hidden');
+                        arrow?.classList.toggle('-rotate-90');
+                        return;
+                    }
+
+                    const chapBtn = e.target.closest('[data-action="toggle-chapter"]');
+                    if (chapBtn) {
+                        const targetId = chapBtn.getAttribute('data-target');
+                        const el = document.getElementById(targetId);
+                        const arrow = chapBtn.querySelector('.arrow-icon');
+                        el?.classList.toggle('hidden');
+                        arrow?.classList.toggle('-rotate-90');
+                        return;
+                    }
+
+                    const lessonBtn = e.target.closest('[data-action="load-lesson"]');
+                    if (lessonBtn) {
+                        const path = lessonBtn.getAttribute('data-path');
+                        if (path) this.openLessonByPath(path);
+                        if (window.innerWidth < 1024) closeSidebar();
+                        return;
+                    }
+                });
+            },
+
+            openSettingsModal() {
+                document.getElementById('input-owner').value = CONFIG.owner;
+                document.getElementById('input-repo').value = CONFIG.repo;
+                document.getElementById('input-branch').value = CONFIG.branch;
+                document.getElementById('repo-modal').classList.remove('hidden');
+            },
+
+            renderSidebarTree(data) {
+                const container = document.getElementById('sidebar-tree');
+                if (!data || data.length === 0) {
+                    container.innerHTML = `<div class="text-xs text-gray-500 py-4 text-center">Không tìm thấy thư mục môn học nào.</div>`;
+                    return;
+                }
+
+                container.innerHTML = data.map((s, sIdx) => `
+                    <div class="space-y-1">
+                        <button data-action="toggle-subject" data-target="subj-${sIdx}"
+                                class="w-full flex items-center justify-between px-2.5 py-2 rounded-xl text-xs font-semibold text-gray-200 hover:bg-gray-800 transition-colors">
+                            <div class="flex items-center gap-2 truncate">
+                                <i class="fa-solid fa-book text-blue-500 text-[11px]"></i>
+                                <span class="truncate">${this.escapeHtml(s.subject)}</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down text-[10px] text-gray-400 transition-transform duration-200 arrow-icon"></i>
+                        </button>
+
+                        <div id="subj-${sIdx}" class="pl-3 space-y-1">
+                            ${s.chapters.map((c, cIdx) => `
+                                <div>
+                                    <button data-action="toggle-chapter" data-target="chap-${sIdx}-${cIdx}"
+                                            class="w-full flex items-center justify-between px-2 py-1.5 rounded-lg text-[11px] font-medium text-gray-400 hover:text-gray-200 transition-colors">
+                                        <div class="flex items-center gap-1.5 truncate">
+                                            <i class="fa-solid fa-layer-group text-indigo-400 text-[10px]"></i>
+                                            <span class="truncate">${this.escapeHtml(c.chapter)}</span>
+                                        </div>
+                                        <i class="fa-solid fa-chevron-down text-[9px] text-gray-500 transition-transform duration-200 arrow-icon"></i>
+                                    </button>
+
+                                    <div id="chap-${sIdx}-${cIdx}" class="pl-3 space-y-0.5">
+                                        ${c.lessons.map(l => `
+                                            <button data-action="load-lesson" data-path="${this.escapeHtml(l.path)}"
+                                                    class="w-full flex items-center gap-2 px-2 py-1.5 rounded text-[11px] text-gray-400 hover:bg-gray-800 hover:text-blue-400 transition-all truncate text-left">
+                                                <i class="fa-regular fa-file-lines text-[10px] text-gray-500"></i>
+                                                <span class="truncate">${this.escapeHtml(l.name)}</span>
+                                            </button>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `).join('');
+            },
+
+            renderHomeSubjects() {
+                const grid = document.getElementById('home-subjects-grid');
+                if (this.catalogData.length === 0) {
+                    grid.innerHTML = `<div class="text-xs text-gray-500 col-span-full">Chưa có dữ liệu bài học trong repository này.</div>`;
+                    return;
+                }
+
+                grid.innerHTML = this.catalogData.map(s => {
+                    let lessonCount = 0;
+                    s.chapters.forEach(c => lessonCount += c.lessons.length);
+                    return `
+                        <div class="bg-darkcard border border-darkborder p-4 rounded-xl space-y-3 hover:border-blue-500/50 transition-all cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <div class="w-8 h-8 rounded-lg bg-blue-600/10 text-blue-400 flex items-center justify-center font-bold text-xs">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <span class="text-[10px] px-2 py-0.5 rounded-full bg-gray-800 text-gray-400 font-medium">${s.chapters.length} Chương</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">${this.escapeHtml(s.subject)}</h4>
+                                <p class="text-[11px] text-gray-400">${lessonCount} Bài học khả dụng</p>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            },
+
+            filterSidebarTree(query) {
+                if (!query) {
+                    this.renderSidebarTree(this.catalogData);
+                    return;
+                }
+
+                const filtered = [];
+                this.catalogData.forEach(s => {
+                    const matchChapters = [];
+                    s.chapters.forEach(c => {
+                        const matchLessons = c.lessons.filter(l => 
+                            l.name.toLowerCase().includes(query) || 
+                            s.subject.toLowerCase().includes(query) || 
+                            c.chapter.toLowerCase().includes(query)
+                        );
+                        if (matchLessons.length > 0) {
+                            matchChapters.push({ chapter: c.chapter, lessons: matchLessons });
+                        }
+                    });
+                    if (matchChapters.length > 0) {
+                        filtered.push({ subject: s.subject, chapters: matchChapters });
+                    }
+                });
+
+                this.renderSidebarTree(filtered);
+            },
+
+            showHomeView() {
+                document.getElementById('view-home').classList.remove('hidden');
+                document.getElementById('view-lesson').classList.add('hidden');
+                document.getElementById('bc-subject').innerText = 'Môn học';
+                document.getElementById('bc-chapter').innerText = 'Chương';
+                document.getElementById('bc-lesson').innerText = 'Bài học';
+            },
+
+            openLessonByPath(path) {
+                const index = this.flatLessonsList.findIndex(item => item.path === path);
+                if (index !== -1) {
+                    this.openLessonByIndex(index);
+                } else {
+                    this.fetchAndRenderFile(path);
+                }
+            },
+
+            openLessonByIndex(index) {
+                if (index < 0 || index >= this.flatLessonsList.length) return;
+                this.currentLessonIndex = index;
+                const item = this.flatLessonsList[index];
+
+                document.getElementById('bc-subject').innerText = item.subject;
+                document.getElementById('bc-chapter').innerText = item.chapter;
+                document.getElementById('bc-lesson').innerText = item.name;
+
+                this.fetchAndRenderFile(item.path);
+                this.updatePrevNextButtons();
+            },
+
+            updatePrevNextButtons() {
+                const prevBtn = document.getElementById('btn-prev-lesson');
+                const nextBtn = document.getElementById('btn-next-lesson');
+
+                prevBtn.disabled = this.currentLessonIndex <= 0;
+                nextBtn.disabled = this.currentLessonIndex >= this.flatLessonsList.length - 1;
+            },
+
+            async fetchAndRenderFile(filePath) {
+                document.getElementById('view-home').classList.add('hidden');
+                document.getElementById('view-lesson').classList.remove('hidden');
+
+                const loading = document.getElementById('lesson-loading');
+                const body = document.getElementById('lesson-body');
+                const error = document.getElementById('lesson-error');
+
+                loading.classList.remove('hidden');
+                body.classList.add('hidden');
+                error.classList.add('hidden');
+
+                try {
+                    const rawUrl = `https://raw.githubusercontent.com/${CONFIG.owner}/${CONFIG.repo}/${CONFIG.branch}/${encodeURIComponent(filePath).replace(/%2F/g, '/')}`;
+                    const res = await fetch(rawUrl);
+
+                    if (!res.ok) {
+                        throw new Error(`Tải file thất bại (${res.status})`);
+                    }
+
+                    const text = await res.text();
+                    
+                    let parsedHtml = window.marked ? window.marked.parse(text) : text;
+                    if (window.DOMPurify) {
+                        parsedHtml = window.DOMPurify.sanitize(parsedHtml);
+                    }
+
+                    body.innerHTML = parsedHtml;
+
+                    loading.classList.add('hidden');
+                    body.classList.remove('hidden');
+
+                    if (window.MathJax && window.MathJax.typesetPromise) {
+                        window.MathJax.typesetPromise([body]).catch(err => console.warn('MathJax error:', err));
+                    }
+
+                } catch (err) {
+                    loading.classList.add('hidden');
+                    error.classList.remove('hidden');
+                    document.getElementById('error-message').innerText = `Lỗi đọc tập tin "${filePath}" từ repository ${CONFIG.owner}/${CONFIG.repo}.`;
+                }
+            },
+
+            escapeHtml(str) {
+                if (typeof str !== 'string') return str;
+                return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => app.init());
+    </script>
+</body>
+</html>
